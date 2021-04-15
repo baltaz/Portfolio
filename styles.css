@@ -2,16 +2,9 @@
 body{
     color: #263238;
     margin: 0px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
 }
-
-.greetings{
-    display: inline-block;
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: 700;
-    font-size: 64px;
-    margin-bottom:0px;
-}
-
 .content{
     display: grid;
     height: 90vh;
@@ -20,23 +13,44 @@ body{
     align-items: center;
 }
 
+.greetings{
+    display: inline;
+}
+
+.greetings.done{
+    display: inline-block;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    font-size: 64px;
+    margin-bottom:0px;
+    transition: 0.1s all linear;
+}
+
 .say-my-name{
+    display: inline;
+}
+
+.say-my-name.done{
     display: inline-block;
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
     font-size: 18px;
     margin: 10px 0px 28px 0px;
+    transition: 0.1s all linear;
 }
-stronge{
-    font-weight: 700;
-    color: #564D70;
-}
+
 .about-me{
-    display: inline-block;
+    display: inline;
+    line-height: 26px;
+}
+
+.about-me.done{
+    display: inline;
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     width: 600px;
     line-height: 26px;
+    transition: 0.2s all linear;
 }
 .img{
     justify-self: center;
@@ -82,6 +96,10 @@ stronge{
     opacity: 0.8;
 }
 
+.disable{
+    pointer-events: none;
+}
+
 @keyframes movement {
     0%   {top:125px;}
     50%  {top:135px;}
@@ -107,7 +125,10 @@ stronge{
     background-color: #ccc;
     margin-left: 0.1rem;
     width: 3px;
-    animation: blink 1s infinite;
+    animation: blink 0.4s infinite;
+  }
+  .typing{
+    animation: none;
   }
 
   @keyframes blink {
@@ -116,4 +137,8 @@ stronge{
     50% { background-color: transparent; }
     99% { background-color: transparent; }
     100%  { background-color: #ccc; }
+  }
+
+  .dynamic-content{
+      min-height: 330px;
   }
