@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Ubuntu:wght@700&display=swap');
+body{
+    color: #263238;
+    margin: 0px;
+}
+
+.greetings{
+    display: inline-block;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    font-size: 64px;
+    margin-bottom:0px;
+}
+
+.content{
+    display: grid;
+    height: 90vh;
+    grid-template-columns: 600px 600px;
+    justify-content: center;
+    align-items: center;
+}
+
+.say-my-name{
+    display: inline-block;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    margin: 10px 0px 28px 0px;
+}
+stronge{
+    font-weight: 700;
+    color: #564D70;
+}
+.about-me{
+    display: inline-block;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    width: 600px;
+    line-height: 26px;
+}
+.img{
+    justify-self: center;
+}
+
+.pattern-down{
+    height: 10%;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 50%;
+    border-radius: 0px 100px 0px 0px;
+    background-color: #FAF9FA;
+}
+
+.pattern-top{
+    height: 10%;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 75%;
+    border-radius: 0px 0px 0px 100px;
+    background-color: #FAF9FA;
+}
+
+.logo{
+    position: absolute;
+    width: 10%;
+    height: 10%;
+    margin-top: 40px;
+    margin-left: 120px;
+}
+
+.bubble{
+    position: relative;
+    left: 196px;
+    animation: movement 2s ease-in-out infinite;
+}
+
+.bubble:hover{
+    cursor: pointer;
+    transition: ease 0.5s all;
+    opacity: 0.8;
+}
+
+@keyframes movement {
+    0%   {top:125px;}
+    50%  {top:135px;}
+    100% {top:125px;}
+}
+
+.icons{
+    width: 42px;
+    float: left;
+    margin: 40px 20px 0px 0px;
+    filter: grayscale(100%);
+    opacity: 80%;
+    transition: 0.1s filter linear, 0.3s -webkit-filter linear;
+    transition: 0.1s opacity linear;
+}
+.icons:hover{
+    opacity: 1;
+    filter: grayscale(0%);
+}
+
+.cursor {
+    display: inline;
+    background-color: #ccc;
+    margin-left: 0.1rem;
+    width: 3px;
+    animation: blink 1s infinite;
+  }
+
+  @keyframes blink {
+    0%  { background-color: #ccc; }
+    49% { background-color: #ccc; }
+    50% { background-color: transparent; }
+    99% { background-color: transparent; }
+    100%  { background-color: #ccc; }
+  }
