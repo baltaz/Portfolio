@@ -7,11 +7,15 @@ body{
 }
 .content{
     display: grid;
-    height: 90vh;
     grid-template-columns: 600px 600px;
+    
+    align-content: center;
     justify-content: center;
-    align-items: center;
+    height: 90vh;
+    display: flex;
+    flex-flow: row wrap;
 }
+
 
 .greetings{
     display: inline;
@@ -54,6 +58,7 @@ body{
 }
 .img{
     justify-self: center;
+    width: 100%;
 }
 
 .pattern-down{
@@ -140,5 +145,5 @@ body{
   }
 
   .dynamic-content{
-      min-height: 330px;
+      width: 600px;
   }
