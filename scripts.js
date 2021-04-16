@@ -1,4 +1,4 @@
-let greetings = ["Hello world", "Hi there", "Welcome!" , "Hola!", "Nice to meet you!", "Nice to see you!", "Hi!", "Hiya!"];
+let greetings = ["Hello world", "Hi there", "Welcome!" , "Hola!", "Hi!", "Hiya!"];
 const getRamdomFrom = elems => elems[Math.floor(Math.random()*elems.length)];
 
 /* cursor creation */

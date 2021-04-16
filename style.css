@@ -5,6 +5,12 @@ body{
     font-family: 'Open Sans', sans-serif;
     color: #263238;
 }
+
+/*===================*/
+.slide{
+    width: 100vw;
+    height: 100vh;
+}
 .container{
     display: grid;
     grid-template-columns: 1fr;
@@ -12,19 +18,42 @@ body{
     margin: 0px auto;
     align-items: center;
 }
+
+.pattern{
+    position: absolute;
+    width: 50%;
+    height: 75px;
+    background-color: #FAF9FA;
+    z-index: -1;
+}
+.bot{
+    bottom: 0px;
+    left: 0px;
+    border-radius: 0px 75px 0px 0px;
+}
+.top{
+    top: 0px;
+    right: 0px;
+    border-radius: 0px 0px 0px 75px;
+}
+/*===================*/
+
+
+
+
 .hero{
     padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    min-height: 90vh;
 }
 
 .dynamic-content{
     display: flex;
     align-items: center;
     flex-direction: column;
-    min-height: 300px;
 }
 
 /* DYNAMIC */
@@ -42,6 +71,7 @@ body{
     font-weight: 700;
     font-size: 64px;
     margin-bottom:0px;
+    margin-top: 0px;
 }
 
 .name.done{
@@ -56,20 +86,24 @@ body{
     line-height: 26px;
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
-    /* transition: 0.2s all linear; */
 }
-
-
 
 .icons{
     width: 42px;
     float: left;
     margin: 40px 20px 0px 0px;
     filter: grayscale(100%);
-    opacity: 80%;
+    opacity: 0;
+    animation: appear 2s 8s ease forwards;
     transition: 0.1s filter linear, 0.3s -webkit-filter linear;
     transition: 0.1s opacity linear;
 }
+
+@keyframes appear {
+    0%{ opacity: 0;}
+    100%{ opacity:0.8;}
+}
+
 .icons:hover{
     opacity: 1;
     filter: grayscale(0%);
@@ -103,30 +137,6 @@ body{
 
 .typing{animation: none;}
 
-.pattern {
-    height: 10%;
-    position: absolute;
-    background-color: #FAF9FA;
-    z-index: -1;
-}
-.bot
-{
-    bottom: 0px;
-    left: 0px;
-    width: 50%;
-    border-radius: 0px 100px 0px 0px;
-}
-
-.top{
-    top: 0px;
-    right: 0px;
-    width: 75%;
-    border-radius: 0px 0px 0px 100px;
-}
-
-
-
-
 @keyframes blink {
     0%   { background-color: #ccc; }
     49%  { background-color: #ccc; }
@@ -152,5 +162,8 @@ body{
     }
     .hero{
         align-items:initial;
+    }
+    .greetings.done{
+        font-size: 64px;
     }
 }
