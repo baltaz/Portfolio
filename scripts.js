@@ -22,7 +22,11 @@ function formatCode(element) {
   charIndex = 0;
   if(++arrayIndex < texts.length)
     setTimeout(()=>typeContent(texts[arrayIndex],elements[arrayIndex]), 400)
-  else bubble.classList.remove("disable");
+  else {
+    const social = document.querySelector(".social");
+    social.classList.add("appear");
+    bubble.classList.remove("disable")
+  };
 }
 
 function justTyping(texto,element) {
@@ -44,8 +48,17 @@ const typeContent = (texto,elem)=>{
   justTyping(texto, element);
 }
 
+
+const slide = (e) => {
+  const overlay = document.querySelector(".overlay");
+  overlay.classList.add("showed");
+}
+
 document.addEventListener("DOMContentLoaded", function() {
   typeContent(texts[arrayIndex],elements[arrayIndex]);
+  
+/*   const codeScreen = document.querySelector(".screen")
+  codeScreen.addEventListener("click", slide); */
   
   bubble.addEventListener("click", ()=>{
     elements.forEach(e=>{
@@ -53,9 +66,11 @@ document.addEventListener("DOMContentLoaded", function() {
       element.textContent=""
       element.classList.remove("done");
     });
+
     arrayIndex = 0;
     typeContent(texts[arrayIndex],elements[arrayIndex])
-  }) 
+    
+  })
 });
 
 // 2) Destacar el Strong

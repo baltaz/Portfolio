@@ -56,6 +56,7 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 550px;
 }
 
 .dynamic-content {
@@ -98,15 +99,24 @@ header {
   font-weight: 400;
 }
 
+.social {
+  opacity: 0;
+}
 .icons {
   width: 42px;
   float: left;
   margin: 40px 20px 0px 0px;
   filter: grayscale(100%);
-  opacity: 0;
-  animation: appear 2s 8s ease forwards;
   transition: 0.1s filter linear, 0.3s -webkit-filter linear;
   transition: 0.1s opacity linear;
+}
+
+.icons:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+}
+.appear {
+  animation: appear 1s 0.5s ease forwards;
 }
 
 @keyframes appear {
@@ -116,11 +126,6 @@ header {
   100% {
     opacity: 0.8;
   }
-}
-
-.icons:hover {
-  opacity: 1;
-  filter: grayscale(0%);
 }
 
 .img {
@@ -197,6 +202,7 @@ header {
   .hero {
     margin-top: -60px;
     align-items: start;
+    height: auto;
   }
   .greetings.done {
     font-size: 64px;
@@ -206,3 +212,70 @@ header {
     width: 25vw;
   }
 }
+
+/* .screen:hover {
+  cursor: pointer;
+  transition: ease 0.5s all;
+  transform: scale(1.1) translate(-9%, -5%);
+  opacity: 0.8;
+}
+.showed {
+  display: block;
+  animation: slide ease-out 0.5s forwards;
+}
+@keyframes slide {
+  0% {
+    opacity: 0.5;
+    width: 1vw;
+    height: 100vh;
+  }
+  100% {
+    opacity: 1;
+    width: 100vw;
+    height: 100vh;
+  }
+}
+.overlay {
+  background-color: #263238;
+  position: absolute;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  opacity: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  align-items: center;
+  z-index: 99;
+}
+
+.projects {
+  background-color: #ccc;
+  margin: 0px 10%;
+}
+
+.project-detail {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 3fr;
+  justify-items: center;
+  width: 100%;
+  background-color: aqua;
+}
+
+.project-detail > .preview {
+  width: 420px;
+  height: 280px;
+  background-color: aquamarine;
+  border-radius: 8%;
+}
+
+.project-detail > .technologies {
+}
+
+.project-detail .tech {
+  width: 42px;
+  float: left;
+  margin-right: 10px;
+} */
