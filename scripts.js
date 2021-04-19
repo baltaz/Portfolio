@@ -66,7 +66,9 @@ document.addEventListener("DOMContentLoaded", function() {
       element.textContent=""
       element.classList.remove("done");
     });
-
+    const social = document.querySelector(".social");
+    social.classList.remove("appear");
+    window.scroll(0,0)
     arrayIndex = 0;
     typeContent(texts[arrayIndex],elements[arrayIndex])
     
