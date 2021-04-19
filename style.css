@@ -1,169 +1,208 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Ubuntu:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Ubuntu:wght@700&display=swap");
 
-body{
-    margin: 0px; padding: 0px; box-sizing: border-box;
-    font-family: 'Open Sans', sans-serif;
-    color: #263238;
+body {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+  color: #263238;
+  display: grid;
+  grid-template-rows: 100px 1fr 100px;
+  height: 100vh;
 }
 
 /*===================*/
-.slide{
-    width: 100vw;
-    height: 100vh;
-}
-.container{
-    display: grid;
-    grid-template-columns: 1fr;
-    height: 100vh;
-    margin: 0px auto;
-    align-items: center;
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-start: 2;
+  margin: 0px auto;
+  align-items: center;
 }
 
-.pattern{
-    position: absolute;
-    width: 50%;
-    height: 75px;
-    background-color: #FAF9FA;
-    z-index: -1;
+.pattern {
+  height: 100px;
+  background-color: #faf9fa;
+  width: 100%;
 }
-.bot{
-    bottom: 0px;
-    left: 0px;
-    border-radius: 0px 75px 0px 0px;
+.bot {
+  border-radius: 0px 75px 0px 0px;
 }
-.top{
-    top: 0px;
-    right: 0px;
-    border-radius: 0px 0px 0px 75px;
+.top {
+  justify-self: end;
+  border-radius: 0px 0px 0px 75px;
 }
+footer {
+  grid-row-start: 3;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+header {
+  grid-row-start: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.logo {
+  margin: 10px 0px 0px 20px;
+  width: 40vw;
+}
+
 /*===================*/
 
-
-
-
-.hero{
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 90vh;
+.hero {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.dynamic-content{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+.dynamic-content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 /* DYNAMIC */
 
-.greetings,.name,.bio{
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
-    display: inline;
-    transition: 0.2s all ease;
+.greetings,
+.name,
+.bio {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  display: inline;
+  transition: 0.2s all ease;
 }
 
-.greetings.done{
-    display: inline-block;
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: 700;
-    font-size: 64px;
-    margin-bottom:0px;
-    margin-top: 0px;
+.greetings.done {
+  display: inline-block;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  font-size: 64px;
+  margin-bottom: 0px;
+  margin-top: 0px;
 }
 
-.name.done{
-    display: inline-block;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 600;
-    font-size: 18px;
-    margin: 10px 0px 28px 0px;
+.name.done {
+  display: inline-block;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  margin: 10px 0px 28px 0px;
 }
-.bio.done{
-    display: inline;
-    line-height: 26px;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
+.bio.done {
+  display: inline;
+  line-height: 26px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
 }
 
-.icons{
-    width: 42px;
-    float: left;
-    margin: 40px 20px 0px 0px;
-    filter: grayscale(100%);
-    opacity: 0;
-    animation: appear 2s 8s ease forwards;
-    transition: 0.1s filter linear, 0.3s -webkit-filter linear;
-    transition: 0.1s opacity linear;
+.icons {
+  width: 42px;
+  float: left;
+  margin: 40px 20px 0px 0px;
+  filter: grayscale(100%);
+  opacity: 0;
+  animation: appear 2s 8s ease forwards;
+  transition: 0.1s filter linear, 0.3s -webkit-filter linear;
+  transition: 0.1s opacity linear;
 }
 
 @keyframes appear {
-    0%{ opacity: 0;}
-    100%{ opacity:0.8;}
-}
-
-.icons:hover{
-    opacity: 1;
-    filter: grayscale(0%);
-}
-
-.img{
-    display: flex;
-    justify-content: center; /* horizontal align */
-    align-items: center; /* vertical align */
-    width: 100%;
-    min-width: 300px;
-}
-
-#bubble{
-    animation: popup 2s ease infinite;
-}
-#bubble:hover{
-    cursor: pointer;
-    opacity: 0.8;
-    transition: ease 0.5s opacity;
-}
-
-.disable{pointer-events: none;}
-.cursor {
-    display: inline;
-    background-color: #ccc;
-    margin-left: 0.1rem;
-    width: 3px;
-    animation: blink 0.4s infinite;
+  0% {
+    opacity: 0;
   }
+  100% {
+    opacity: 0.8;
+  }
+}
 
-.typing{animation: none;}
+.icons:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+}
+
+.img {
+  display: flex;
+  justify-content: center; /* horizontal align */
+  align-items: center; /* vertical align */
+  width: 100%;
+  min-width: 300px;
+}
+
+#bubble {
+  animation: popup 2s ease infinite;
+}
+#bubble:hover {
+  cursor: pointer;
+  opacity: 0.8;
+  transition: ease 0.5s opacity;
+}
+
+.disable {
+  pointer-events: none;
+}
+.cursor {
+  display: inline;
+  background-color: #ccc;
+  margin-left: 0.1rem;
+  width: 3px;
+  animation: blink 0.4s infinite;
+}
+
+.typing {
+  animation: none;
+}
 
 @keyframes blink {
-    0%   { background-color: #ccc; }
-    49%  { background-color: #ccc; }
-    50%  { background-color: transparent; }
-    99%  { background-color: transparent; }
-    100% { background-color: #ccc; }
+  0% {
+    background-color: #ccc;
+  }
+  49% {
+    background-color: #ccc;
+  }
+  50% {
+    background-color: transparent;
+  }
+  99% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: #ccc;
+  }
 }
 
 @keyframes popup {
-    0% {transform: translateY(0px); }
-    50% {transform: translateY(-20px); }
-    100% {transform: translateY(0px); }
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
-@media screen and (min-width: 768px){
-    .container{
-        width: 100%;
-        max-width: 1200px;
-        grid-template-columns: repeat(2,1fr);
-    }
-    .dynamic-content{
-        align-items:initial;
-    }
-    .hero{
-        align-items:initial;
-    }
-    .greetings.done{
-        font-size: 64px;
-    }
+@media screen and (min-width: 768px) {
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .dynamic-content {
+    align-items: initial;
+  }
+  .hero {
+    margin-top: -60px;
+    align-items: start;
+  }
+  .greetings.done {
+    font-size: 64px;
+  }
+  .logo {
+    margin: 20px 0px 0px 20px;
+    width: 25vw;
+  }
 }
